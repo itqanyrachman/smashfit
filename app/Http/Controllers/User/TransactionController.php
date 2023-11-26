@@ -18,23 +18,23 @@ class TransactionController extends Controller
         ]);
     }
 
-    public function reschedule(Transaction $transaction, Request $request)
-    {
-        $date = $request->input('date');
-        $field_selected = $request->input('field',Field::pluck('id')->first());
-        $schedules = Schedule::whereDate('datetime',\Illuminate\Support\Carbon::parse($date))
-            ->where('field_id',$field_selected)
-            ->get();
+    // public function reschedule(Transaction $transaction, Request $request)
+    // {
+    //     $date = $request->input('date');
+    //     $field_selected = $request->input('field',Field::pluck('id')->first());
+    //     $schedules = Schedule::whereDate('datetime',\Illuminate\Support\Carbon::parse($date))
+    //         ->where('field_id',$field_selected)
+    //         ->get();
 
-        $fields = Field::all();
-        return view('pages.user.transaction.reschedule',[
-            'transaction' => $transaction,
-            'date' => $date,
-            'field_selected' => $field_selected,
-            'schedules' => $schedules,
-            'fields' => $fields,
-        ]);
-    }
+    //     $fields = Field::all();
+    //     return view('pages.user.transaction.reschedule',[
+    //         'transaction' => $transaction,
+    //         'date' => $date,
+    //         'field_selected' => $field_selected,
+    //         'schedules' => $schedules,
+    //         'fields' => $fields,
+    //     ]);
+    // }
 
     public function cancel(Transaction $transaction)
     {

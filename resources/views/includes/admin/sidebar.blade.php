@@ -14,7 +14,7 @@
             @endif
             <li class="{{request()->is('admin/user*') ? 'active' : ''}}"><a class="nav-link" href="{{route('admin::user::index')}}"><i class="fas fa-users"></i> <span>Pengguna</span></a></li>
             <li class="{{request()->is('admin/transaction*') ? 'active' : ''}}"><a class="nav-link" href="{{route('admin::transaction::index')}}"><i class="fas fa-dollar"></i> <span>Transaksi</span></a></li>
-            <li class="{{request()->is('admin/equipment*') ? 'active' : ''}}"><a class="nav-link" href="{{route('admin::equipment::index')}}"><i class="fas fa-tools"></i> <span>Peralatan</span></a></li>
+            <!-- <li class="{{request()->is('admin/equipment*') ? 'active' : ''}}"><a class="nav-link" href="{{route('admin::equipment::index')}}"><i class="fas fa-tools"></i> <span>Peralatan</span></a></li> -->
         </ul>
     </aside>
 </div>

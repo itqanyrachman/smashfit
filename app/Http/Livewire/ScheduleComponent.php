@@ -18,7 +18,7 @@ class ScheduleComponent extends Component
     public $field_total = 0;
     public $equip_total = 0;
     public $total = 0;
-    public  $equip_items = [];
+    public $equip_items = [];
     public $showForm = false;
     public $showPayment = false;
     public $transactionId;
@@ -29,7 +29,7 @@ class ScheduleComponent extends Component
             $schedule = Schedule::whereIn('id',$this->items)->first();
             $this->field_total = $schedule->field->price * count($this->items);
             if ($this->equip_items){
-                $this->equip_orders =  Equipment::whereIn('id',$this->equip_items)->get()->toArray();
+                // $this->equip_orders =  Equipment::whereIn('id',$this->equip_items)->get()->toArray();
                 $this->equip_total = collect($this->equip_orders)->pluck('price')->sum();
                 $this->total = $this->equip_total + $this->field_total;
             }else{
@@ -48,7 +48,7 @@ class ScheduleComponent extends Component
         $transaction->save();
 
         $schedules = Schedule::whereIn('id',$this->items)->get();
-        $equipments = Equipment::whereIn('id',$this->equip_items)->get();
+        // $equipments = Equipment::whereIn('id',$this->equip_items)->get();
         foreach ($schedules as $schedule){
             $schedule->status = 'pending';
             $schedule->save();
@@ -59,12 +59,12 @@ class ScheduleComponent extends Component
             $booking->save();
         }
 
-        foreach ($equipments as $equipment){
-            $booking = new Booking();
-            $booking->transaction_id = $transaction->id;
-            $booking->equipment_id = $equipment->id;
-            $booking->save();
-        }
+        // foreach ($equipments as $equipment){
+        //     $booking = new Booking();
+        //     $booking->transaction_id = $transaction->id;
+        //     $booking->equipment_id = $equipment->id;
+        //     $booking->save();
+        // }
 
         $this->transactionId = $transaction->id;
         $this->showPayment = true;
@@ -75,7 +75,7 @@ class ScheduleComponent extends Component
     public function render()
     {
         return view('livewire.schedule-component',[
-            'equipments' => Equipment::get(),
+            // 'equipments' => Equipment::get(),
         ]);
     }
 }

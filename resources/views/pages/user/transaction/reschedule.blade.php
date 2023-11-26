@@ -1,4 +1,4 @@
-@extends('layout.user')
+<!-- @extends('layout.user')
 @section('title')
     Reschedule
 @endsection
@@ -14,4 +14,4 @@
             <livewire:reschedule-component :schedules="$schedules" :fields="$fields" :field_selected="$field_selected" :transaction="$transaction" />
         </div>
     </div>
-@endsection
+@endsection -->

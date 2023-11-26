@@ -19,8 +19,8 @@ class Booking extends Model
         return $this->belongsTo(Schedule::class);
     }
 
-    public function equipment()
-    {
-        return $this->belongsTo(Equipment::class);
-    }
+    // public function equipment()
+    // {
+    //     return $this->belongsTo(Equipment::class);
+    // }
 }

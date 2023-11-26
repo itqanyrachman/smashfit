@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
     <div class="card">
         <div class="card-body">
             <form action="{{route('user::reschedule',[$transaction])}}">
@@ -87,4 +87,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
