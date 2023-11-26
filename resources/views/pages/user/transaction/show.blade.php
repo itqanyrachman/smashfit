@@ -17,7 +17,7 @@
                     <div class="card">
                         <div class="card-header">
                             @if($transaction->status == 'pending')
-                                <a href="{{route('user::reschedule',[$transaction])}}" class="btn btn-primary mr-2">Reschedule</a>
+                                <!-- <a href="{{route('user::reschedule',[$transaction])}}" class="btn btn-primary mr-2">Reschedule</a> -->
                                 <a href="{{route('user::cancel-order',[$transaction])}}" class="btn btn-danger mr-2">Batalkan Pesanan</a>
                                 <a href="{{route('user::upload-form',[$transaction])}}" class="btn btn-primary">Upload Bukti Pembayaran</a>
                             @endif

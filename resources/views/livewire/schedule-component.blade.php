@@ -37,7 +37,7 @@
     @if($items)
     <div class="card">
         <div class="card-header">
-            Informasi Pemesanan <span class="btn btn-link" wire:click="$toggle('showForm')">{{$showForm ? 'Sembunyikan Tabel Peralatan' : 'Sewa Peralatan'}}</span>
+            Informasi Pemesanan
         </div>
         <div class="card-body">
             <div class="row">
@@ -66,7 +66,8 @@
                         </div>
                         @endif
                     </div>
-                </div>
+                    <!-- Equipment -->
+                <!-- </div>
                 <div class="col-md-6">
                     @if($showForm)
                     <div class="table-responsive">
@@ -88,7 +89,7 @@
                         </table>
                     </div>
                     @endif
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="card-footer">
