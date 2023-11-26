@@ -35,8 +35,7 @@ Transaksi
                                 @foreach($transaction->bookings as $booking)
                                 @if($booking->schedule_id > 0)
                                 <li>{{$booking->schedule->datetime}} - {{$booking->schedule->field->name}} @ {{$booking->schedule->field->price}}</li>
-                                @elseif($booking->equipment_id > 0)
-                                <li>{{$booking->equipment->name}} - {{$booking->equipment->price}}</li>
+                                <!--  -->
                                 @endif
                                 @endforeach
                             </ul>
